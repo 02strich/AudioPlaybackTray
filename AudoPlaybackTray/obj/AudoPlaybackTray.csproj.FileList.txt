@@ -1,0 +1,8 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AudoPlaybackTray.Form1.resources
+obj\Debug\AudoPlaybackTray.Properties.Resources.resources
+obj\Debug\AudoPlaybackTray.csproj.GenerateResource.Cache
+bin\Debug\AudoPlaybackTray.exe
+bin\Debug\AudoPlaybackTray.pdb
+obj\Debug\AudoPlaybackTray.exe
+obj\Debug\AudoPlaybackTray.pdb
