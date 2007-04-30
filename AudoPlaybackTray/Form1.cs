@@ -14,18 +14,19 @@ namespace AudoPlaybackTray
         List<string> devList;
         Microsoft.Win32.RegistryKey regKey;
         string defaultPlayback = "";
+        DevicesCollection devColl;
 
         public Form1()
         {
             InitializeComponent();
             devList = new List<string>();
-            DevicesCollection myDevices = new DevicesCollection();
+            devColl = new DevicesCollection();
             regKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Multimedia\Sound Mapper", true);
             if(regKey == null)
                 regKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Multimedia", true).CreateSubKey("Sound Mapper");
             defaultPlayback = regKey.GetValue("Playback") as string;
 
-            foreach (DeviceInformation dev in myDevices)
+            foreach (DeviceInformation dev in devColl)
             {
                 if (dev.ModuleName == "")
                     continue;
@@ -47,7 +48,12 @@ namespace AudoPlaybackTray
             Hide();
         }
 
-        public bool setDefaultPlaybackDevice(String deviceName)
+        public string[] getPlaybackDevices()
+        {
+            return devList.ToArray(); ;
+        }
+
+        public bool setDefaultPlaybackDevice(string deviceName)
         {
             regKey.SetValue("Playback", deviceName, Microsoft.Win32.RegistryValueKind.String);
             defaultPlayback = deviceName;
@@ -64,6 +70,11 @@ namespace AudoPlaybackTray
                 }
             }
             return true;
+        }
+
+        public string getDefaultPlaybackDevice()
+        {
+            return defaultPlayback;
         }
 
         private void mnu_Device_Click(object sender, EventArgs e)
