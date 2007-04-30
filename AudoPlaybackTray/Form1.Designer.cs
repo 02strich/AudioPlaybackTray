@@ -34,7 +34,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu_Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.test2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,16 +43,14 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.test2ToolStripMenuItem,
             this.toolStripMenuItem1,
             this.mnu_Exit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 54);
             // 
             // toolStripMenuItem1
             // 
@@ -66,12 +63,6 @@
             this.mnu_Exit.Size = new System.Drawing.Size(152, 22);
             this.mnu_Exit.Text = "Exit";
             this.mnu_Exit.Click += new System.EventHandler(this.mnu_Exit_Click);
-            // 
-            // test2ToolStripMenuItem
-            // 
-            this.test2ToolStripMenuItem.Name = "test2ToolStripMenuItem";
-            this.test2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.test2ToolStripMenuItem.Text = "Test2";
             // 
             // Form1
             // 
@@ -92,7 +83,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnu_Exit;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem test2ToolStripMenuItem;
     }
 }
 

@@ -5,14 +5,41 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.DirectX.DirectSound;
 
 namespace AudoPlaybackTray
 {
     public partial class Form1 : Form
     {
+        List<string> devList;
+        Microsoft.Win32.RegistryKey regKey;
+        string defaultPlayback = "";
+
         public Form1()
         {
             InitializeComponent();
+            devList = new List<string>();
+            DevicesCollection myDevices = new DevicesCollection();
+            regKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Multimedia\Sound Mapper", true);
+            if(regKey == null)
+                regKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Multimedia", true).CreateSubKey("Sound Mapper");
+            defaultPlayback = regKey.GetValue("Playback") as string;
+
+            foreach (DeviceInformation dev in myDevices)
+            {
+                if (dev.ModuleName == "")
+                    continue;
+
+                devList.Insert(0, dev.Description);
+                ToolStripMenuItem item = new ToolStripMenuItem();
+                item.Click += new EventHandler(mnu_Device_Click);
+                item.Text = dev.Description;
+                if (dev.Description == defaultPlayback)
+                {
+                    item.Checked = true;
+                }
+                contextMenuStrip1.Items.Insert(0, item);
+            }
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -20,30 +47,28 @@ namespace AudoPlaybackTray
             Hide();
         }
 
-        public static List<String> getDevices()
+        public bool setDefaultPlaybackDevice(String deviceName)
         {
-        }
-
-        public static bool setDefaultPlaybackDevice(String deviceName)
-        {
-        }
-
-        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
-        {
-            while (contextMenuStrip1.Items.Count>2)
+            regKey.SetValue("Playback", deviceName, Microsoft.Win32.RegistryValueKind.String);
+            defaultPlayback = deviceName;
+            foreach (ToolStripItem item in contextMenuStrip1.Items)
             {
-                //contextMenuStrip1.Items[0].Click -= 
-                contextMenuStrip1.Items.RemoveAt(0);
+                try {
+                    ToolStripMenuItem item2 = item as ToolStripMenuItem;
+                    if (item2.Text == deviceName)
+                        item2.Checked = true;
+                    else
+                        item2.Checked = false;
+                } catch(Exception) {
+                    continue;
+                }
             }
-            ToolStripItem item = new ToolStripMenuItem();
-            item.Click += new EventHandler(mnu_Device_Click);
-            item.Text = DateTime.Now.ToLongTimeString();
-            contextMenuStrip1.Items.Insert(0, item);
+            return true;
         }
 
         private void mnu_Device_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(sender.ToString());
+            setDefaultPlaybackDevice(sender.ToString());
         }
 
         private void mnu_Exit_Click(object sender, EventArgs e)
