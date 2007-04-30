@@ -34,7 +34,18 @@ namespace AudoPlaybackTray
             }
             else if (param["setDefaultPlayback"] != null)
             {
-                frm.setDefaultPlaybackDevice(param["setPlayback"]);
+                if (param["forApplication"] != null)
+                {
+                    string tmp = frm.getDefaultPlaybackDevice();
+                    frm.setDefaultPlaybackDevice(param["setDefaultPlayback"]);
+                    System.Diagnostics.Process.Start(param["forApplication"]);
+                    System.Threading.Thread.Sleep(1000 * 20);
+                    frm.setDefaultPlaybackDevice(tmp);
+                }
+                else
+                {
+                    frm.setDefaultPlaybackDevice(param["setDefaultPlayback"]);
+                }                
             }
             else if (param["getDefaultPlayback"] != null)
             {
