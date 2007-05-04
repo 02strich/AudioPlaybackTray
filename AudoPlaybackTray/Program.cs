@@ -38,6 +38,7 @@ namespace AudoPlaybackTray
                 {
                     string tmp = frm.getDefaultPlaybackDevice();
                     frm.setDefaultPlaybackDevice(param["setDefaultPlayback"]);
+                    string tmp2 = param["forApplication"];
                     System.Diagnostics.Process.Start(param["forApplication"]);
                     System.Threading.Thread.Sleep(1000 * 20);
                     frm.setDefaultPlaybackDevice(tmp);

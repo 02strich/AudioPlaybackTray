@@ -41,7 +41,7 @@
             // 
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Text = "Audio Playback Device";
             this.notifyIcon1.Visible = true;
             // 
             // contextMenuStrip1
@@ -50,17 +50,17 @@
             this.toolStripMenuItem1,
             this.mnu_Exit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 54);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 32);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(100, 6);
             // 
             // mnu_Exit
             // 
             this.mnu_Exit.Name = "mnu_Exit";
-            this.mnu_Exit.Size = new System.Drawing.Size(152, 22);
+            this.mnu_Exit.Size = new System.Drawing.Size(103, 22);
             this.mnu_Exit.Text = "Exit";
             this.mnu_Exit.Click += new System.EventHandler(this.mnu_Exit_Click);
             // 
