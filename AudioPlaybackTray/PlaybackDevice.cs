@@ -4,7 +4,7 @@ using System.Text;
 //using Microsoft.DirectX.DirectSound;
 using WaveLib.AudioMixer;
 
-namespace AudoPlaybackTray
+namespace AudioPlaybackTray
 {
     class PlaybackDevice
     {

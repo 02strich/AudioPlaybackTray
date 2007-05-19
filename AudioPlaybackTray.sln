@@ -1,7 +1,7 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudoPlaybackTray", "AudoPlaybackTray\AudoPlaybackTray.csproj", "{69526091-8A98-40A3-A243-4EB27A60CED7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioPlaybackTray", "AudioPlaybackTray\AudioPlaybackTray.csproj", "{69526091-8A98-40A3-A243-4EB27A60CED7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveLibMixer", "WaveLibMixer\WaveLibMixer.csproj", "{6F3FA628-01C6-48AF-9D1A-9BB1EAF8D259}"
 EndProject

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Specialized;
 using System.Text.RegularExpressions;
 
-namespace AudoPlaybackTray
+namespace AudioPlaybackTray
 {
     /// <summary>
     /// Arguments class

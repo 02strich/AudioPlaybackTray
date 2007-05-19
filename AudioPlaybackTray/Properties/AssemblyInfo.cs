@@ -1,16 +1,16 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("AudoPlaybackTray")]
+[assembly: AssemblyTitle("AudioPlaybackTray")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HPI")]
-[assembly: AssemblyProduct("AudoPlaybackTray")]
-[assembly: AssemblyCopyright("Copyright © HPI 2007")]
+[assembly: AssemblyProduct("AudioPlaybackTray")]
+[assembly: AssemblyCopyright("Copyright © Stefan Richter 2007")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

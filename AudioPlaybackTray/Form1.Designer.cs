@@ -1,4 +1,4 @@
-﻿namespace AudoPlaybackTray
+namespace AudioPlaybackTray
 {
     partial class Form1
     {
