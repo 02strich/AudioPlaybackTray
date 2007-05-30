@@ -15,7 +15,11 @@ namespace AudioPlaybackTray
             Arguments param = new Arguments(args);
             if (param["help"] != null)
             {
-                // print help
+                MessageBox.Show("AudioPlaybackTray\nOptions:\n"+
+                "\t--listPlayback\t\tlists all playback devices\n"+
+                "\t--getDefaultPlayback\treturns the current default playback device\n"+
+                "\t--setDefaultPlayback=DEV\tsets the default playback device to DEV\n"+
+                "\t--forApplication=APP\tsets the playback device only for the start of APP");
             }
             else if (param["listPlayback"] != null)
             {
